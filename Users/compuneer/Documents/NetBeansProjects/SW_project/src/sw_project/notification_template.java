@@ -120,5 +120,30 @@ public class notification_template {
             System.out.println("wrong input");
         }
     }
+public void ubdate(int x){
+        
+        try {
+            
+            Connection myconObj = null ;  //the obj of class connection allows me to connect to database
+            myconObj = DriverManager.getConnection("jdbc:derby://localhost:1527/notification_templates", "kareem", "kareem123");
+            ResultSet resultObj = null ;// the obj will store the results of queris
+            Statement mystatObj = null;
+            
+            PreparedStatement st=myconObj.prepareStatement("update KAREEM.TEMPLATE_TABLE set id=? ,subject=?, content=?,availble_language=? where id =?");
+            
+            st.setInt(1, id);
+            st.setString(2, subject);
+            st.setString(3, content);
+            st.setString(4, Available_language);
+            st.setInt(5, x);
+            st.executeUpdate();
+            
+           
+            
+                         
+        } catch (SQLException ex) {
+            System.out.println("wrong input");
+        }
+    }
     }
    
