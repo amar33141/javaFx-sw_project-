@@ -70,5 +70,42 @@ public class notification_template {
            System.out.println("wrong input");
         }
     
-    }}
+    }
+      String  read(int x){
+                   try {
+         Connection myconObj = null ;  //the obj of class connection allows me to connect to database 
+         myconObj = DriverManager.getConnection("jdbc:derby://localhost:1527/notification_templates", "kareem", "kareem123");
+         ResultSet resultObj = null ;// the obj will store the results of queris 
+         Statement mystatObj = null;
+         mystatObj  =  myconObj.createStatement();
+         resultObj  = mystatObj.executeQuery("Select ID , SUBJECT , CONTENT , AVAILBLE_LANGUAGE from KAREEM.TEMPLATE_TABLE where id = "+x);
+         int idd = 0 ;
+         String S = new String();
+         String arr[] = new String [2];
+        
+             while (resultObj.next())
+            {
+              
+             idd = resultObj.getInt("ID");
+             String subjectt = resultObj.getString("SUBJECT");
+             String contentt = resultObj.getString("CONTENT");
+             String languagee = resultObj.getString("AVAILBLE_LANGUAGE");
+             System.out.println("ID:" +idd+ "  Subject:"+ subjectt+"  Content:" + contentt+ "  language:" + languagee);
+              S = subjectt ;
+            }
+             
+              if(idd == 0)
+             {
+                  System.out.println("wrong id");
+             }
+              return S ;
+        }
+        catch (SQLException E)
+        {
+           System.out.println("wrong input");
+        }   
+    return "";
+    }
+    
+    }
    

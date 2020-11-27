@@ -23,5 +23,15 @@ private Sending obj_s;
         this.notificate = notificate;
     }
    
+       public String form(User obj){
+        obj_t = new notification_template();
+       
+      notificate = "Dear " +obj.getName()+ " your " + obj_t.read(obj.getId()) + " has been confirmed" ;
+        return notificate ;
+    }
+    public void sendMail(String notificate){
+        obj_s =  new email ();
+       obj_s.Send(notificate, obj_u);
+    }
     
 }

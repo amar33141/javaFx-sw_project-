@@ -11,9 +11,9 @@ package sw_project;
  */
 public class Email implements Sending {
       private User obj_u;
-    public void Send(String x,User obj_u)
+       public void Send(String x,User obj_u)
     {
-       
+        System.err.println(x);
     }
 }
 
