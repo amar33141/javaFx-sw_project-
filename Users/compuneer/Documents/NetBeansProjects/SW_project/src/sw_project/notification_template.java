@@ -106,6 +106,19 @@ public class notification_template {
         }   
     return "";
     }
-    
+    public void delete(int x){
+        try {
+            
+            Connection myconObj = null ;  //the obj of class connection allows me to connect to database
+            myconObj = DriverManager.getConnection("jdbc:derby://localhost:1527/notification_templates", "kareem", "kareem123");
+            ResultSet resultObj = null ;// the obj will store the results of queris
+            Statement mystatObj = null;
+            mystatObj  =  myconObj.createStatement();
+            //System.out.println("aa");
+             mystatObj.executeUpdate("Delete from KAREEM.TEMPLATE_TABLE where id = "+x);
+        } catch (SQLException ex) {
+            System.out.println("wrong input");
+        }
+    }
     }
    
