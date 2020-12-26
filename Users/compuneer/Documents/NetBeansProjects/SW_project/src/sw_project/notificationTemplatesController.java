@@ -21,7 +21,11 @@ public boolean creat(@RequestParam(name="id") int id,@RequestParam(name="content
         return obj.update(id,sub,con,avl,o);
     }
 
-
+@RequestMapping(value = "/read",method = RequestMethod.GET)
+    public notification_template read(@RequestParam(name="id") int id,notification_template o)
+    {
+        return obj.read(id,o);
+    }
 
 
 
