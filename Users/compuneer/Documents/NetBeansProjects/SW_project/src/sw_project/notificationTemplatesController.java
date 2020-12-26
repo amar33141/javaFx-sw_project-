@@ -27,6 +27,11 @@ public boolean creat(@RequestParam(name="id") int id,@RequestParam(name="content
         return obj.read(id,o);
     }
 
+@RequestMapping(value = "/delete",method = RequestMethod.DELETE)
+    public boolean delete(int id ,notification_template o)
+    {
+        return obj.delete(id,o);
 
+    }
 
 }
