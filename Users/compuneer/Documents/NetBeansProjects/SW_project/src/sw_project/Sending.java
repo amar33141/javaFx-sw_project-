@@ -1,7 +1,5 @@
-
-package sw_project;
-
+package com.example.demo;
 
 public interface Sending {
-    public void Send(String x,User obj_u);
+    public void Send(int id,String massage);
 }
