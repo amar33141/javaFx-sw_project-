@@ -21,7 +21,10 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 
-
+		Email obj=Email.getInstance();
+		SMS ob=SMS.getInstance();
+		obj.dequeue();
+		ob.dequeue();
 
 	/*	System.out.println("Welcome to fly with us company");
 		while (true)
